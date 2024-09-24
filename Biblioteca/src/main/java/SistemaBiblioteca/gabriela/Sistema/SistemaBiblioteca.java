@@ -45,11 +45,18 @@ public class SistemaBiblioteca implements InterfaceBiblioteca {
     }
 
     @Override
-    public Livro pesquisarLivro(Livro livro) throws LivroNaoEncontrado {
-       if (this.livros.containsKey(livro.getCodigo())){
-           return livro;
+    public List<Livro> pesquisarLivro(Livro livro) throws LivroNaoEncontrado {
+       List<Livro> livropesq = new ArrayList<>();
+       for (Livro livroP: this.livros.values()){
+           if (livroP.getCodigo().equals(livro.getCodigo())){
+               livropesq.add(livroP);
+           }
        }
-       throw new LivroNaoEncontrado("LIVRO NÃO ENCONTRADO");
+       if (livropesq.isEmpty()){
+           throw new LivroNaoEncontrado("NENHUM LIVRO ENCONTRADO");
+       }else {
+           return livropesq;
+       }
     }
 
     @Override

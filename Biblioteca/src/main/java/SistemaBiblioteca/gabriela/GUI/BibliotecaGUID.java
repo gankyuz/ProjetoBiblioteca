@@ -11,12 +11,12 @@ import java.io.File;
 
 public class BibliotecaGUID extends JFrame {
     JLabel linha1, linha2;
-    ImageIcon bibliotecaPrincipal = new ImageIcon(new ImageIcon("./imgs/livroprincipal.png").getImage().getScaledInstance(150,110, Image.SCALE_SMOOTH));
-    ImageIcon usuario = new ImageIcon(new ImageIcon("./imgs/do-utilizador.png").getImage().getScaledInstance(50,50, Image.SCALE_SMOOTH));
-    ImageIcon livroempres = new ImageIcon(new ImageIcon("./imgs/livroempres.png").getImage().getScaledInstance(50,50,Image.SCALE_SMOOTH));
-    ImageIcon livro = new ImageIcon(new ImageIcon("./imgs/book.png").getImage().getScaledInstance(50,50,Image.SCALE_SMOOTH));
-    ImageIcon remove = new ImageIcon(new ImageIcon("./imgs/lixo.png").getImage().getScaledInstance(50,50,Image.SCALE_SMOOTH));
-    ImageIcon pesqImg = new ImageIcon(new ImageIcon("./imgs/pesquisar-alt.png").getImage().getScaledInstance(50,50,Image.SCALE_SMOOTH));
+    ImageIcon bibliotecaPrincipal = new ImageIcon(new ImageIcon("./imgs/e-book.png").getImage().getScaledInstance(150,110, Image.SCALE_SMOOTH));
+    ImageIcon usuario = new ImageIcon(new ImageIcon("./imgs/do-utilizador.png").getImage().getScaledInstance(30,30, Image.SCALE_SMOOTH));
+    ImageIcon livroempres = new ImageIcon(new ImageIcon("./imgs/livroempres.png").getImage().getScaledInstance(30,30,Image.SCALE_SMOOTH));
+    ImageIcon livro = new ImageIcon(new ImageIcon("./imgs/book.png").getImage().getScaledInstance(30,30,Image.SCALE_SMOOTH));
+    ImageIcon remove = new ImageIcon(new ImageIcon("./imgs/lixo.png").getImage().getScaledInstance(30,30,Image.SCALE_SMOOTH));
+    ImageIcon pesqImg = new ImageIcon(new ImageIcon("./imgs/pesquisar-alt.png").getImage().getScaledInstance(30,30,Image.SCALE_SMOOTH));
     JButton botaoCadastrarUsu, botaoCadastrarLi, botaoEmprestimo, botaoPesquisar, botaoRemover;
     SistemaBiblioteca sistema = new SistemaBiblioteca();
     public BibliotecaGUID(){
@@ -25,9 +25,9 @@ public class BibliotecaGUID extends JFrame {
         setSize(800,600); //tamanho da janela
         setLocationRelativeTo(null);
         setResizable(true);
-        getContentPane().setBackground(Color.white);
+        getContentPane().setBackground(Color.black);
         linha1 = new JLabel("Biblioteca Elevando a Leitura", JLabel.CENTER);
-        linha1.setForeground(Color.black);
+        linha1.setForeground(Color.white);
         linha1.setFont(new Font("Serif", Font.BOLD, 24));
         linha2 = new JLabel(bibliotecaPrincipal, JLabel.CENTER);
 
