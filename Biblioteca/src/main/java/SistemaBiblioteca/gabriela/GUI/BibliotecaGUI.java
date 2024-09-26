@@ -1,5 +1,6 @@
 package SistemaBiblioteca.gabriela.GUI;
 
+import SistemaBiblioteca.gabriela.Controller.*;
 import SistemaBiblioteca.gabriela.Sistema.Endereco;
 import SistemaBiblioteca.gabriela.Sistema.SistemaBiblioteca;
 
@@ -10,20 +11,23 @@ import java.util.EnumSet;
 
 public class BibliotecaGUI extends JFrame {
     JLabel linha1, linha2;
-    ImageIcon bibliotecaPrincipal = new ImageIcon("./iconBiblioteca/principal.png");
-    ImageIcon usuario = new ImageIcon("./iconBiblioteca/cadastroUsup.png");
-    ImageIcon livro = new ImageIcon("./iconBiblioteca/cadastroLivro.png");
-    ImageIcon remove = new ImageIcon("./iconBiblioteca/removeLivro.png");
+    ImageIcon bibliotecaPrincipal = new ImageIcon(new ImageIcon("./imgs/lula-lendo.jpg").getImage().getScaledInstance(190,200, Image.SCALE_SMOOTH));
+    ImageIcon usuario = new ImageIcon(new ImageIcon("./imgs/do-utilizador.png").getImage().getScaledInstance(30,30, Image.SCALE_SMOOTH));
+    ImageIcon livroempres = new ImageIcon(new ImageIcon("./imgs/livroempres.png").getImage().getScaledInstance(30,30,Image.SCALE_SMOOTH));
+    ImageIcon livro = new ImageIcon(new ImageIcon("./imgs/book.png").getImage().getScaledInstance(30,30,Image.SCALE_SMOOTH));
+    ImageIcon remove = new ImageIcon(new ImageIcon("./imgs/lixo.png").getImage().getScaledInstance(30,30,Image.SCALE_SMOOTH));
+    ImageIcon pesqImg = new ImageIcon(new ImageIcon("./imgs/pesquisar-alt.png").getImage().getScaledInstance(30,30,Image.SCALE_SMOOTH));
     SistemaBiblioteca sistema = new SistemaBiblioteca();
     JMenuBar barraDeMenu = new JMenuBar();
     public BibliotecaGUI(){
-        setTitle("Biblioteca Eleve à Leitura");
-        setSize(800,900);
+        setTitle("library");
+        setSize(800,600);
         setLocationRelativeTo(null);
+        setResizable(false);
         setBackground(Color.white);
 
-        linha1 = new JLabel("Biblioteca Eleve à Leitura", JLabel.CENTER);
-        linha1.setForeground(Color.red);
+        linha1 = new JLabel("Biblioteca LULALENO", JLabel.CENTER);
+        linha1.setForeground(Color.black);
         linha1.setFont(new Font("Serif", Font.BOLD, 40));
 
         linha2 = new JLabel(bibliotecaPrincipal, JLabel.CENTER);
@@ -33,7 +37,7 @@ public class BibliotecaGUI extends JFrame {
         add(linha2);
         add(new JLabel());
 
-        JMenu menuCadastrarUsu = new JMenu("Cadastrar Usuário");
+        JMenu menuCadastrarUsu = new JMenu("Cadastrar");
         JMenuItem menuCadastrarUsuario = new JMenuItem("Cadastrar Usuário");
         menuCadastrarUsu.add(menuCadastrarUsuario);
 
@@ -53,11 +57,11 @@ public class BibliotecaGUI extends JFrame {
         JMenuItem menuRemoverLivro = new JMenuItem("Remover Livro");
         menuRemover.add(menuRemoverLivro);
 
-/*menuPesquisarLivro.addActionListener();
-        menuEmprestimoLivro.addActionListener();
-        menuCadastrarUsuario.addActionListener();
-        menuCadastrarLivro.addActionListener();
-        menuRemoverLivro.addActionListener();*//*
+        menuPesquisarLivro.addActionListener(new BibliotecaPesquisarController(sistema,this));
+        menuEmprestimoLivro.addActionListener(new BibliotecaEmprestimoController(sistema,this));
+        //menuCadastrarUsuario.addActionListener(new BibliotecaAddUsuarioController(sistema, this));
+        menuCadastrarLivro.addActionListener(new BibliotecaAddLivroController(sistema,this));
+        menuRemoverLivro.addActionListener(new BibliotecaRemoveController(sistema, this));
 
 
         menuCadastrarUsuario.addActionListener(
@@ -80,6 +84,10 @@ public class BibliotecaGUI extends JFrame {
                     }
                 });
         barraDeMenu.add(menuCadastrarUsuario);
+        barraDeMenu.add(menuCadastrarLivro);
+        barraDeMenu.add(menuEmprestimoLivro);
+        barraDeMenu.add(menuPesquisarLivro);
+        barraDeMenu.add(menuRemoverLivro);
         setJMenuBar(barraDeMenu);
 
     }
@@ -89,4 +97,3 @@ public class BibliotecaGUI extends JFrame {
         janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 }
-*/
