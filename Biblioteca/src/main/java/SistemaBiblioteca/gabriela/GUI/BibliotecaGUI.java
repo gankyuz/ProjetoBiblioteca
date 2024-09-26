@@ -1,4 +1,3 @@
-/*
 package SistemaBiblioteca.gabriela.GUI;
 
 import SistemaBiblioteca.gabriela.Sistema.Endereco;
@@ -54,7 +53,6 @@ public class BibliotecaGUI extends JFrame {
         JMenuItem menuRemoverLivro = new JMenuItem("Remover Livro");
         menuRemover.add(menuRemoverLivro);
 
-        */
 /*menuPesquisarLivro.addActionListener();
         menuEmprestimoLivro.addActionListener();
         menuCadastrarUsuario.addActionListener();
