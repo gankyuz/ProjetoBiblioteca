@@ -11,7 +11,8 @@ import java.io.File;
 
 public class BibliotecaGUID extends JFrame {
     JLabel linha1, linha2;
-    ImageIcon bibliotecaPrincipal = new ImageIcon(new ImageIcon("./imgs/lula-lendo.jpg").getImage().getScaledInstance(190,200, Image.SCALE_SMOOTH));
+    ImageIcon bibliotecaPrincipal = new ImageIcon("./imgs/lula-lendo.jpg");
+            //.getImage().getScaledInstance(190,200, Image.SCALE_SMOOTH));
     ImageIcon usuario = new ImageIcon(new ImageIcon("./imgs/do-utilizador.png").getImage().getScaledInstance(30,30, Image.SCALE_SMOOTH));
     ImageIcon livroempres = new ImageIcon(new ImageIcon("./imgs/livroempres.png").getImage().getScaledInstance(30,30,Image.SCALE_SMOOTH));
     ImageIcon livro = new ImageIcon(new ImageIcon("./imgs/book.png").getImage().getScaledInstance(30,30,Image.SCALE_SMOOTH));
